@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <h1>Data binding concepts</h1>
+    <hr />
+    <h3>Handson requirements</h3>
+    <ol>
+      <li>Add a Input field which updates a property ('username') via Two-Way-Binding</li>
+      <li>Output the username property via String Interpolation (in a paragraph below the input)</li>
+      <li>Add a button which may only be clicked if the username is NOT an empty string</li>
+      <li>Upon clicking the button, the username should be reset to an empty string</li>
+    </ol>
+    <hr />
+
+    <div>
+      <label>Enter Username:</label>
+      <input type="text"
+             class="btn btn-primary"
+             [(ngModel)]="username"
+             (input)="disableUsername()" />
+    </div>
+
+    <p>{{username}}</p>
+
+    <button class="btn-primary"
+            [disabled]="disableUser"
+            (click)="resetUsername()">
+      Disable User
+    </button>
+
+  </div>
+</div>
